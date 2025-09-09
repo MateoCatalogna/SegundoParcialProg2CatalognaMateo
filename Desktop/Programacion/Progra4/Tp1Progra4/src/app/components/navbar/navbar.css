@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+}
+
+/* Navbar */
+nav ul.navbar-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+/* Botones */
+nav ul.navbar-list li {
+  background: linear-gradient(90deg, #01d0ff, #0062ff);
+  color: white;
+  font-size: 1.1em;   /* un poco más chico */
+  font-weight: bold;
+  text-transform: uppercase;  
+  letter-spacing: 0.08em;
+  text-align: center;
+
+  /* Tamaño reducido */
+  padding: 0.6em 1.5em; /* mejor que usar width/height fijos */
+  border-radius: 1.5em;
+
+  margin: 0.5em;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 10px rgba(0, 153, 255, 0.5);
+  display: flex;          /* para centrar texto */
+  align-items: center;    
+  justify-content: center;
+  min-width: 6em;         /* evita que se achique demasiado */
+}
+
+nav ul.navbar-list li a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+nav ul.navbar-list li:hover {
+  background-size: 400% 400%;
+  color: #fff;
+  box-shadow: 0 0 20px #009dff, 0 0 40px #0044ff;
+  transform: scale(1.05);
+}
+
+/* Animación del gradiente */
+@keyframes neon-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Logo (si lo usás) */
+.logo {
+  object-fit: cover;
+  width: 5rem;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}

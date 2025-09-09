@@ -1,0 +1,23 @@
+<section>
+  <h2>Registro</h2>
+  <form (submit)="$event.preventDefault()">
+    <label>
+      Nombre
+      <input name="name" placeholder="Tu nombre" />
+    </label>
+    <br/>
+    <label>
+      Correo
+      <input type="email" name="email" placeholder="tu@ejemplo.com" />
+    </label>
+    <br/>
+    <label>
+      Contraseña
+      <input type="password" name="password" placeholder="********" />
+    </label>
+    <br/>
+    <button type="submit">Crear cuenta</button>
+  </form>
+
+  <p>¿Ya tienes cuenta? <a routerLink="/login">Ir a iniciar sesión</a></p>
+</section>

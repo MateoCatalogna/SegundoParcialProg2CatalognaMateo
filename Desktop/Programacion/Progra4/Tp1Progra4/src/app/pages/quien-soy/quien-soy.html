@@ -1,0 +1,24 @@
+<section class="quien-soy-container">
+  <h2>Quién soy</h2>
+
+  <div *ngIf="loading">Cargando datos de GitHub...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <div *ngIf="user" class="card">
+    <img [src]="user.avatar_url" alt="avatar" width="120" />
+    <h3>Mateo Catalogna</h3>
+    <p><strong>Usuario:</strong> {{ user.login }}</p>
+    <p *ngIf="user.bio"><strong>Bio:</strong> {{ user.bio }}</p>
+    <p><strong>Repos públicos:</strong> {{ user.public_repos }}</p>
+    <p><strong>Seguidores:</strong> {{ user.followers }}</p>
+    <p><a [href]="user.html_url" target="_blank">Ver en GitHub</a></p>
+
+    <hr/>
+
+    <h4>Juego elegido</h4>
+    <p>
+      Elegí el juego <strong>"Adivinar el número"</strong>.
+    </p>
+    <p><strong>Cómo jugar:</strong> Se genera un numero aleatorio del 1 al 100, en donde tenes que introducir un numero y va a decir si es mas grande o mas chico</p>
+  </div>
+</section>
