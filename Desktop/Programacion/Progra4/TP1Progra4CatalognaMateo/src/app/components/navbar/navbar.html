@@ -1,0 +1,39 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <a class="navbar-brand" routerLink="/">
+      <img src="../../../assets/logo.png" alt="Logo" class="logo"/>
+    </a>
+
+    <div class="links-container">
+      <ul class="navbar-list">
+        <!-- Nombre del usuario -->
+        <li class="navbar-button" *ngIf="user$ | async"> <!-- Muestra  li solo si hay un usuario logueado. user$ es  Observable, y  async lo suscribe-->
+          <span *ngIf="userName$ | async as name">Hola, {{ name }}</span> <!-- Extrae el nombre del usuario del Observable userName$.
+                                                                          La variable name se usa dentro del <span>-->
+        </li>
+      
+        <li class="navbar-button">
+          <a class="nav-link" routerLink="/home">Inicio</a>
+        </li>
+        <li class="navbar-button">
+          <a class="nav-link" routerLink="/quien-soy">Quién Soy</a>
+        </li>
+
+        <!-- Botones de login/registro -->
+        <li class="navbar-button" *ngIf="!(user$ | async)"> <!--Muestra estos botones solo si NO hay usuario logueado.-->
+          <a class="nav-link" routerLink="/login">Iniciar Sesión</a>
+        </li>
+        <li class="navbar-button" *ngIf="!(user$ | async)">
+          <a class="nav-link" routerLink="/registro">Registrarse</a>
+        </li>
+
+        
+
+        <!-- Botón de logout en rojo -->
+        <li class="red-button" *ngIf="user$ | async">
+          <a class="logout-link" (click)="logout()">Salir</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

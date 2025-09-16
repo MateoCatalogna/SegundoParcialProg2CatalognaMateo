@@ -1,0 +1,50 @@
+<section>
+  <h2>Iniciar sesión</h2>
+
+  <form [formGroup]="loginForm" (ngSubmit)="login()"> <!--enlaza el formulario HTML con el FormGroup reactivo definido en el componente-->
+    <label>
+      Correo
+      <input type="email" formControlName="email" placeholder="tu@ejemplo.com" />
+    </label>
+    <ng-template [ngIf]="loginForm.get('email')?.touched && loginForm.get('email')?.invalid"> <!--el error solo se muestra si el control fue tocado 
+      ?accede a una propiedad de un objeto solo si ese objeto no es null o undefined.
+-->
+      <p *ngIf="loginForm.get('email')?.errors?.['required']">Email obligatorio</p>  
+      <p *ngIf="loginForm.get('email')?.errors?.['email']">Email no válido</p>
+    </ng-template>
+    <br/>
+
+    <label>
+      Contraseña
+      <input type="password" formControlName="password" placeholder="********" />
+    </label>
+    <ng-template [ngIf]="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+      <p *ngIf="loginForm.get('password')?.errors?.['required']">Contraseña obligatoria</p>
+      <p *ngIf="loginForm.get('password')?.errors?.['minlength']">Mínimo 6 caracteres</p>
+    </ng-template>
+    <br/>
+
+    <button type="submit">Ingresar</button>
+  </form>
+
+  <p>¿No tienes cuenta? <a routerLink="/registro">Regístrate</a></p>
+
+  <div class="quick-login">
+  <button 
+    *ngFor="let user of quickAccessAccounts" 
+    (click)="quickLogin(user)" 
+    class="quick-btn">
+    {{ user.label }}
+  </button>
+</div>
+
+</section>
+
+<ng-template [ngIf]="showModal">
+  <div class="modal-backdrop">
+    <div class="modal">
+      <p>{{ errorMessage }}</p>
+      <button (click)="closeModal()">Cerrar</button>
+    </div>
+  </div>
+</ng-template>

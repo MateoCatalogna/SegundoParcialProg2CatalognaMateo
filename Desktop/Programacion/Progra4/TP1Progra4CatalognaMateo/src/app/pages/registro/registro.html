@@ -1,0 +1,42 @@
+<section>
+  <h2>Crea Tu Cuenta</h2>
+  <form (ngSubmit)="register()">
+    <label>
+      Nombre
+      <input type="text" [(ngModel)]="nombre" name="nombre" required />
+    </label>
+    <br />
+
+    <label>
+      Apellido
+      <input type="text" [(ngModel)]="apellido" name="apellido" required />
+    </label>
+    <br />
+
+    <label>
+      Edad
+      <input type="number" [(ngModel)]="edad" name="edad" required />
+    </label>
+    <br />
+
+    <label>
+      Correo
+      <input type="email" [(ngModel)]="email" name="email" required />
+    </label>
+    <br />
+
+    <label>
+      Contraseña
+      <input type="password" [(ngModel)]="password" name="password" required />
+    </label>
+    <br />
+
+    <button type="submit">Crear cuenta</button>
+  </form>
+
+  <p *ngIf="errorMessage" style="color: red">{{ errorMessage }}</p>
+
+  <p *ngIf="successMessage" style="color: green">{{ successMessage }}</p>
+
+  <p>¿Ya tienes cuenta? <a routerLink="/login">Ir a iniciar sesión</a></p>
+</section>

@@ -1,0 +1,100 @@
+/* Body */
+body {
+  margin: 0;
+  padding: 0; /* Asegura que no haya padding del body */
+  min-height: 100vh;
+  width: 100vw; /* Evita scroll horizontal */
+  overflow-x: hidden; /* Bloquea scroll horizontal si algo se pasa */
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px; /* Limita ancho del navbar para que no toque los bordes */
+  margin: 0 auto; /* Centra horizontalmente */
+  padding: 1em 2em; /* Espacio interno */
+}
+
+/* Lista de botones */
+.navbar-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap; /* Evita que los botones salgan del contenedor en pantallas pequeñas */
+  gap: 0.5em; /* Espacio entre botones sin causar overflow */
+}
+
+/* Botones base */
+.navbar-button {
+  background: linear-gradient(90deg, #01d0ff, #0062ff);
+  color: #ffffff;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: center;
+  padding: 0.6em 1.5em;
+  border-radius: 1.5em;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 10px rgba(0, 153, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 6em;
+}
+
+.navbar-button a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Hover animado */
+.navbar-button:hover {
+  background-size: 400% 400%;
+  color: #fff;
+  box-shadow: 0 0 20px #009dff, 0 0 40px #0044ff;
+  transform: scale(1.05);
+}
+
+/* Botón rojo especial */
+.red-button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6em 1.5em;
+  border-radius: 1.5em;
+  min-width: 6em;
+  background-color: crimson;
+  box-shadow: 0 0 15px crimson;
+  transition: all 0.4s ease;
+}
+
+.red-button:hover {
+  box-shadow: 0 0 25px crimson, 0 0 50px darkred;
+  transform: scale(1.05);
+}
+
+/* Animación gradiente */
+@keyframes neon-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Logo */
+.logo {
+  width: 5rem;
+  height: 5rem;
+  object-fit: contain;
+}
